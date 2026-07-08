@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*
+  ======VARIABLES======
+*/
+:root {
+  /*
+    Las variables son peque;os contenedores de informacion que puedes utilizar
+    para reutilizar un estilo declarandolo una sola vez y utilizar ese estilo por toda
+    la pagina
+  */
+  --text-color-main: white;
+  --size-titles: 64px;
+  --size-subtitles: 24px;
+  --size-highlights-paragraphs: 19px;
+  --size-paragraphs: 14px;
+  --gap-standard: 12px;
+  --padding-standard: 32px;
+  --color-button: #40444f60;
+} 
+
+/*
+  ======GENERALES======
+*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color-main);
+}
+
+body {
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
+
+/*
+  ======REUTILIZABLES======
+*/
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-main-center {
+  justify-content: center;
+}
+
+.flex-main-space-between {
+  justify-content: space-between;
+}
+
+.flex-secondary-center {
+  align-items: center;
+}
+
+.gap-standard {
+  gap: var(--gap-standard);
+}
+
+.padding-standard {
+  padding: var(--padding-standard);
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+/*
+  ======ESPECIFICOS======
+*/
+
+header {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://starlink.com/assets-new/images/landing/field/v4_night_sky.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 0 32px;
+}
+
+nav {
+  padding: 32px 0 0 0;
+}
+
+.circular-button {
+  border-radius: 100%;
+  padding: 10px;
+  background-color: var(--color-button);
+}
+
+.button-inactive {
+  padding: 2px 8px;
+}
+
+.button-active {
+  padding: 2px 6px;
+  background-color: rgba(199, 199, 199, 0.753);
+  border-radius: 8px;
+}
+
+.buttons-menu {
+  background-color: rgba(128, 128, 128, 0.737);
+  padding: 2px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.buttons-menu > button {
+  padding: 8px 16px;
+  font-weight: 600;
+}
+
+.link-menu {
+  font-size: var(--size-paragraphs);
+  font-weight: 600;
+}
+
+.col-content {
+  display: flex;
+}
+
+.button-hightlight{
+  background-color: white;
+  color: black;
+}
+
+.button-nohightlight{
+  background-color: rgb(67, 67, 67);
+  color: white;
+}
+
+#logo {
+  letter-spacing: 4px;
+  font-size: 16px;
+  margin-right: 16px;
+}
+
+#header-content {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100%;
+}
+
+#column-content {
+  gap: 16px;
+  padding: 0 0 120px 120px;
+}
+
+#column-content > h1 {
+  font-size: var(--size-titles);
+  font-weight: 800;
+}
+
+#column-content > p {
+  font-size: var(--size-paragraphs);
+  color: rgb(145, 145, 145);
+  font-weight: 600;
+}
+
+#column-content > h2 {
+  font-size: var(--size-titles);
+  font-weight: 600;
+}
+
+#column-content > h2 > span {
+  font-size: var(--size-highlights-paragraphs);
+  color: rgb(145, 145, 145);
+}
+
+#column-content > div{
+  display: flex;
+  gap: 16px;
+}
+
+#column-content > div > button{
+  padding: 8px 32px;
+  font-size: var(--size-paragraphs);
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/*
+===================================================
+===================SEGUNDA PARTE===================
+=================================================== 
+*/
+/* Estilos generales de la sección */
+.planes-starlink {
+  background-color: #000000;
+  color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', Arial, sans-serif;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.selector-container {
+  background-color: #1c1c1e;
+  border-radius: 10px;
+  display: flex;
+  padding: 4px;
+  margin-bottom: 40px; 
+}
+
+.selector-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.selector-btn.active {
+  background-color: #636161;
+  color: #ffffff;
+}
+
+.section-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Contenedor principal de las 3 tarjetas */
+.tarjetas-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas horizontales */
+  gap: 24px; /* Separación entre cuadros */
+  width: 100%;
+  max-width: 1600px; /* Esto hace que los cuadros sean más pequeños */
+  justify-content: center;
+  margin: 0 auto 30px auto;
+}
+
+.tarjeta-plan {
+  background-color: #121212;
+  border-radius: 16px;
+  padding: 24px 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px; 
+  transition: transform 0.2s ease;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.tarjeta-plan h3 {
+  font-size: 1.6rem;
+  font-weight: 500px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.tarjeta-plan p {
+  color: rgb(160, 157, 157);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.plan-caracteristicas {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.plan-caracteristicas li {
+  font-size: 0.85rem;
+  color: rgba(250, 250, 250, 0.85);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.plan-caracteristicas li::before {
+  content: "•";
+  color: #fafafa;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: 4px;
+}
+
+.plan-precio {
+  margin-top: auto;
+  text-align: left;
+}
+
+.desde {
+  font-size: 0.65rem;
+  color: rgba(250, 250, 250, 0.4);
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: -4px;
+}
+
+.tarjeta-plan .precio {
+  font-size: 3.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0;          
+  line-height: 1;      
+}
+
+.tarjeta-plan .precio span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgba(250, 250, 250, 0.5);
+  margin-left: 4px;
+}
+
+.legal-text {
+  max-width: 800px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(250, 250, 250, 0.4);
+  line-height: 1.4;
+}
+/*
+===================================================
+===================TERCERA PARTE===================
+=================================================== 
+*/
+.Fiable-y-resistente {
+  /* imagen de fondo y controles */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://starlink.com/assets-new/images/landing/field/v4_lightning.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.contenido-relampago {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.contenido-relampago h2 {
+  font-size: var(--size-titles);
+  font-weight: 600;
+  margin: 0;
+}
+
+
+.contenido-relampago .button-hightlight {
+  padding: 40px 32px;
+  font-size: var(--size-paragraphs);
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/*
+===================================================
+===================CUARTA PARTE====================
+=================================================== 
+*/
+.seccion-hielo {
+  /* imagen de fondo y controles */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://starlink.com/assets-new/images/landing/field/v4_car_on_ice.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.contenido-hielo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.contenido-hielo h2 {
+  font-size: var(--size-titles);
+  font-weight: 600;
+  margin: 0;
+}
+
+.contenido-hielo .button-hightlight {
+  padding: 12px 32px;
+  font-size: var(--size-paragraphs);
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
