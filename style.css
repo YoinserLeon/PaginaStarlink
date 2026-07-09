@@ -200,13 +200,20 @@ nav {
 /* Estilos generales de la sección */
 .planes-starlink {
   background-color: #000000;
+  
+  /* --- CAPA OSCURA + IMAGEN --- */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://starlink.com/assets-new/images/landing/illustrations/illustration_08.webp");
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Roboto', Arial, sans-serif;
-  padding: 40px 20px;
+  padding: 80px 20px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -351,43 +358,54 @@ nav {
 ===================TERCERA PARTE===================
 =================================================== 
 */
-.Fiable-y-resistente {
-  /* imagen de fondo y controles */
+
+/* Contenedor principal de la sección */
+/* --- AÑADIMOS LA IMAGEN DE LA TORMENTA --- */
+.seccion-fiable {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    linear-gradient(rgba(92, 92, 92, 0.4), rgba(0, 0, 0, 0.4)),
     url("https://starlink.com/assets-new/images/landing/field/v4_lightning.webp");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  background-size: cover; /* Hace que la imagen cubra toda la sección */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita */
+  min-height: 100vh; 
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
+  align-items: center; 
+  justify-content: flex-start; 
+  padding-left: 15%; /* Mantiene el texto separado del borde izquierdo */
+  padding-right: 20px;
 }
 
+
+/* El bloque que contiene los textos */
 .contenido-relampago {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
+  max-width: 550px; /* ESTA ES LA CLAVE: Limita el ancho para forzar los saltos de línea */
 }
 
 .contenido-relampago h2 {
-  font-size: var(--size-titles);
-  font-weight: 600;
-  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
+.contenido-relampago p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #d1d1d1; /* Gris claro */
+  margin-bottom: 30px;
+}
 
-.contenido-relampago .button-hightlight {
-  padding: 40px 32px;
-  font-size: var(--size-paragraphs);
+/* El botón blanco de "Más información" */
+.btn-blanco {
+  background-color: #ffffff;
+  color: #000000;
   font-weight: 600;
-  border-radius: 6px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
-
 /*
 ===================================================
 ===================CUARTA PARTE====================
@@ -396,35 +414,416 @@ nav {
 .seccion-hielo {
   /* imagen de fondo y controles */
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("https://starlink.com/assets-new/images/landing/field/v4_car_on_ice.webp");
+  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  url("https://starlink.com/assets-new/images/landing/field/v4_car_on_ice.webp");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 20px;
+  justify-content: flex-start;
+  padding-left: 15%; 
+  padding-right: 20px;
 }
 
 .contenido-hielo {
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 24px;
+  max-width: 600px;
 }
 
 .contenido-hielo h2 {
-  font-size: var(--size-titles);
+  font-size: 64px;
   font-weight: 600;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+}
+
+.contenido-hielo p {
+  color: #e0e0e0;
+  font-size: 18px;
+  line-height: 1.5;
   margin: 0;
 }
 
 .contenido-hielo .button-hightlight {
   padding: 12px 32px;
-  font-size: var(--size-paragraphs);
+  font-size: 16px;
   font-weight: 600;
   border-radius: 6px;
   cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+/*
+===================================================
+===================QUINTA PARTE====================
+=================================================== 
+*/
+.seccion-imagenes-info {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://starlink.com/assets-new/images/landing/illustrations/illustration_08.webp");
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; 
+  overflow: hidden;
+}
+
+.titulo-seccion-imagenes {
+  font-size: 58px; /* Aumentamos el tamaño */
+  font-weight: 700; /* Más grueso */
+  color: #ffffff;
+  margin-bottom: 60px;
+  text-align: center;
+  padding: 0 40px;
+  max-width: 100%; /* Un poco más estrecho para que ocupe menos líneas */
+  white-space: nowrap;
+}
+
+/* Envoltorio que oculta la barra de desplazamiento nativa pero permite el scroll */
+.carrusel-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 40px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carrusel-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* La "pista" donde van las tarjetas */
+.carrusel-track {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  padding-right: 40px;
+}
+
+/* Cada tarjeta tiene un ancho fijo para que la cuarta se asome */
+.tarjeta-imagen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 550px; /* Reducimos un poco el ancho para que quepan bien en vertical */
+  flex: 0 0 auto; 
+}
+
+.imagen-wrapper {
+  width: 100%;
+  border-radius: 18px; /* Un poco más redondeadas, estilo Starlink */
+  overflow: hidden;
+  aspect-ratio: 4 / 3; /* ESTO ES CLAVE: Cambia 4/3 por 3/4 para que sean verticales */
+  background-color: #1c1c1e;
+}
+
+.imagen-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.tarjeta-imagen:hover .imagen-wrapper img {
+  transform: scale(1.03);
+}
+
+/* 3. Ajuste del texto: alineación y jerarquía */
+.texto-imagen {
+  padding: 0 4px; /* Pequeño margen para que no toque los bordes */
+}
+
+.texto-imagen p {
+  color: #a0a0a0; /* Un gris un poco más oscuro para que el blanco resalte más */
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left; /* Asegura alineación a la izquierda */
+}
+
+.texto-imagen p strong {
+  color: #ffffff; /* Blanco puro */
+  font-weight: 600;
+  display: block; /* Esto hace que el título de la tarjeta se separe ligeramente del texto */
+  margin-bottom: 8px;
+}
+
+/* Controles de navegación */
+.carrusel-controles {
+  display: flex;
+  gap: 12px; /* Espacio sutil entre los dos botones */
+  justify-content: center; /* Centra los botones horizontalmente */
+  margin-top: 48px; /* Espacio entre las tarjetas y los botones */
+  width: 100%;
+}
+
+.btn-nav {
+  background-color: #292929; /* Color oscuro similar al de la imagen */
+  color: #292929; /* Color gris para el icono */
+  border: none;
+  border-radius: 50%; /* Hace que el botón sea un círculo perfecto */
+  width: 28px; /* Tamaño del botón */
+  height: 28px; /* Tamaño del botón */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Ajusta el tamaño del icono dentro del botón */
+.btn-nav i {
+  font-size: 14px; 
+}
+
+/* Efecto al pasar el ratón */
+.btn-nav:hover {
+  background-color: #444444; /* Un gris un poco más claro al hacer hover */
+  color: #686767; /* El icono se vuelve blanco */
+}
+
+
+.seccion-split {
+  background-color: #000000;
+  padding: 100px 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.split-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* Espacio de separación entre la imagen y el texto */
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* La magia para invertir el orden en la séptima sección */
+.split-invertido .split-contenedor {
+  flex-direction: row-reverse;
+}
+
+.split-imagen {
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10; /* Proporción panorámica limpia */
+  background-color: #111;
+}
+
+.split-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.split-texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.split-texto h2 {
+  font-size: 38px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.split-texto p {
+  font-size: 16px;
+  color: #a0a0a0;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/*
+===================================================
+====================CESTA PARTE====================
+=================================================== 
+*/
+.Disponible-a-escala-global {
+  /* Mantenemos tu fondo */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.37)),
+    url("https://starlink.com/assets-new/images/landing/field/v4_green_roof.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;    /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  padding: 0 20px;
+}
+
+.contenido-centrado {
+  /* 1. Alineación del texto a la izquierda */
+  text-align: left; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 600px; 
+  max-width: 650px;
+  color: #474747;
+}
+
+.contenido-centrado h2 {
+  font-size: 60px; /* Tamaño grande e impactante */
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.contenido-centrado p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #bdbdbd; /* Un gris muy claro para elegancia */
+}
+
+/* Reutilizamos el estilo del botón blanco que ya tienes */
+.btn-blanco {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+/*
+=============================================
+================SEPTIMA PARTE================
+=============================================
+*/
+.Conéctalo-Oriéntalo-al-cielo {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), /* Oscurecí ligeramente el gradiente para que el texto resalte más */
+    url("https://starlink.com/assets-new/images/landing/field/v4_residential_yard.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center; /* Mantiene el contenido centrado verticalmente */
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  padding-left: 20%; /* Agrega el espacio lateral izquierdo igual que en tus otras secciones */
+  padding-right: 20px;
+}
+
+/* Estilos para el contenedor del texto */
+.hombre-sentado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 24px; 
+  max-width: 600px; /* Aumentamos el ancho para permitir la línea larga del párrafo */
+}
+
+.hombre-sentado h2 {
+  font-size: 58px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  margin: 0;
+}
+
+.hombre-sentado p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #d1d1d1;
+  margin: 0;
+}
+
+.hombre-sentado .button-hightlight {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white; /* Aseguramos que sea blanco */
+  color: black; /* Texto negro para contrastar */
+  border: none;
+}
+
+/*
+===================================================
+======================FOOTER=======================
+=================================================== 
+*/
+.footer-starlink {
+  background-color: #000000;
+  /* 32px a la izquierda lo pega directo a la esquina igual que en la imagen */
+  padding: 24px 32px; 
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espacio vertical ajustado entre la fila de enlaces y el copyright */
+}
+
+/* Primera fila: Enlaces */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px; /* Separación horizontal justa entre cada opción */
+}
+
+.footer-links a {
+  color: #ffffff;
+  font-size: 11px; /* Letra pequeña y sutil como la original */
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+/* Segunda fila: Copyright e Icono de X */
+.footer-copyright {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Icono de la red social X */
+.footer-copyright i {
+  font-size: 11px;
+  color: #ffffff;
+}
+
+/* Texto gris de SpaceX */
+.footer-copyright .spacex-subtext {
+  color: #8e8e93; /* Gris claro que atenúa el texto secundario */
+  margin-left: 4px;
+}
+
+.footer-copyright .spacex-subtext a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-copyright .spacex-subtext a:hover {
+  text-decoration: underline;
 }
